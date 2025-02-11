@@ -4,6 +4,6 @@ package comptoirs.dao;
  * Cette interface sera auto-implémentée par Spring
  */
 public interface UnitesCommandeesParProduit {
-	String getNomProduit();
-	Long getUnitesCommandees();
+    String getNomProduit();
+    Long getUnitesCommandees();
 }

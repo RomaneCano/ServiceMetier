@@ -4,6 +4,6 @@ package comptoirs.dao;
  * Cette interface sera auto-implémentée par Spring
  */
 public interface NombreDeProduitsDifferentsParClient {
-	String getSociete();
-	Long getNombre();
+    String getSociete();
+    Long getNombre();
 }

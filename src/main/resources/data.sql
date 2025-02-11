@@ -1,4 +1,4 @@
-INSERT INTO Categorie(code, libelle, description) VALUES 
+INSERT INTO Categorie(code, libelle, description) VALUES
     ( 1, 'Boissons', 'Boissons, cafés, thés, bières'),
 	( 2, 'Condiments', 'Sauces, assaisonnements et épices'),
 	( 3, 'Desserts', 'Desserts et friandises'),
@@ -9,7 +9,7 @@ INSERT INTO Categorie(code, libelle, description) VALUES
 	( 8, 'Poissons et fruits de mer', 'Poissons, fruits de mer, escargots');
 ALTER TABLE Categorie ALTER COLUMN code RESTART WITH 9;
 
-INSERT INTO Client(code, societe, contact, fonction, adresse, ville, region, code_postal, pays, telephone, fax) VALUES 
+INSERT INTO Client(code, societe, contact, fonction, adresse, ville, region, code_postal, pays, telephone, fax) VALUES
     ( 'ALFKI', 'Alfreds Futterkiste', 'Maria Anders', 'Représentant(e)', 'Obere Str. 57', 'Berlin', NULL, '12209', 'Allemagne', '030-0074321', '030-0076545'),
 	( 'ANATR', 'Ana Trujillo Emparedados y helados', 'Ana Trujillo', 'Propriétaire', 'Avda. de la Constitución 2222', 'México D.F.', NULL, '05021', 'Mexique', '(5) 555-4729', '(5) 555-3745'),
 	( 'ANTON', 'Antonio Moreno Taquería', 'Antonio Moreno', 'Propriétaire', 'Mataderos  2312', 'México D.F.', NULL, '05023', 'Mexique', '(5) 555-3932', NULL),
@@ -104,7 +104,7 @@ INSERT INTO Client(code, societe, contact, fonction, adresse, ville, region, cod
 
 
 
-INSERT INTO Commande(numero, client_code, saisiele, envoyeele, port, destinataire, adresse, ville, region, code_postal, pays, remise) VALUES 
+INSERT INTO Commande(numero, client_code, saisiele, envoyeele, port, destinataire, adresse, ville, region, code_postal, pays, remise) VALUES
     ( 10248, 'VINET', '1994-08-04', '1994-08-16', 161.00, 'Vins et alcools Chevalier', '59 rue de l''Abbaye', 'Reims', NULL, '51100', 'France', 0.00),
 	( 10249, 'TOMSP', '1994-08-05', '1994-08-10', 58.00, 'Toms Spezialitäten', 'Luisenstr. 48', 'Münster', NULL, '44087', 'Allemagne', 0.00),
 	( 10250, 'HANAR', '1994-08-08', '1994-08-12', 329.00, 'Hanari Carnes', 'Rua do Paço, 67', 'Rio de Janeiro', 'RJ', '05454-876', 'Brésil', 0.00),
@@ -937,7 +937,7 @@ INSERT INTO Commande(numero, client_code, saisiele, envoyeele, port, destinatair
 	( 11077, 'RATTC', '1996-06-05', NULL, 42.00, 'Rattlesnake Canyon Grocery', '2817 Milton Dr.', 'Albuquerque', 'NM', '87110', 'Etats-Unis', 0.00);
 ALTER TABLE Commande ALTER COLUMN numero RESTART WITH 11078;
 
-INSERT INTO Produit(reference, nom, fournisseur, categorie_code, quantite_par_unite, prix_unitaire, unites_en_stock, unites_commandees, niveau_de_reappro, indisponible ) VALUES 
+INSERT INTO Produit(reference, nom, fournisseur, categorie_code, quantite_par_unite, prix_unitaire, unites_en_stock, unites_commandees, niveau_de_reappro, indisponible ) VALUES
     ( 1, 'Chai', 1, 1, '10 boîtes x 20 sacs', 90.00, 39, 0, 10, 0),
 	( 2, 'Chang', 1, 1, '24 bouteilles (1 litre)', 95.00, 17, 40, 25, 0),
 	( 3, 'Aniseed Syrup', 1, 2, '12 bouteilles (550 ml)', 50.00, 13, 70, 25, 0),
@@ -1017,7 +1017,7 @@ INSERT INTO Produit(reference, nom, fournisseur, categorie_code, quantite_par_un
 	( 77, 'Original Frankfurter grüne Soße', 12, 2, '12 boîtes', 65.00, 32, 0, 15, 0);
 ALTER TABLE Produit ALTER COLUMN reference RESTART WITH 78;
 
-INSERT INTO Ligne(commande_numero, produit_reference, quantite) VALUES 
+INSERT INTO Ligne(commande_numero, produit_reference, quantite) VALUES
 ( 10248, 11, 12),
 ( 10248, 42, 10),
 ( 10248, 72, 5),

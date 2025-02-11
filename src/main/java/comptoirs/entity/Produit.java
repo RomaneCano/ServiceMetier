@@ -12,50 +12,50 @@ import java.util.List;
 @Entity
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 public class Produit {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Setter(AccessLevel.NONE) // la clé est autogénérée par la BD, On ne veut pas de "setter"
-	private Integer reference = null;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE) // la clé est autogénérée par la BD, On ne veut pas de "setter"
+    private Integer reference = null;
 
-	@NonNull
-	@Column(unique=true, length = 255)
+    @NonNull
+    @Column(unique=true, length = 255)
     @Size(min = 1, max = 255)
-	private String nom;
+    private String nom;
 
-	@ToString.Exclude
+    @ToString.Exclude
     // Inutilisé dans cette application
-	private int fournisseur = 1;
+    private int fournisseur = 1;
 
-	private String quantiteParUnite = "Une boîte de 12";
+    private String quantiteParUnite = "Une boîte de 12";
 
     @Basic(optional = false)
     @Column(precision = 18, scale = 2)
     @PositiveOrZero(message = "Le prix ne peut pas être négatif")
-	private BigDecimal prixUnitaire = BigDecimal.TEN;
+    private BigDecimal prixUnitaire = BigDecimal.TEN;
 
-	@ToString.Exclude
+    @ToString.Exclude
     // Contrainte métier à respecter : >= unitesCommandees
-	private int unitesEnStock = 0;
+    private int unitesEnStock = 0;
 
-	@ToString.Exclude
+    @ToString.Exclude
     // Nombre d'unités commandées et pas encore livrées
-	private int unitesCommandees = 0;
+    private int unitesCommandees = 0;
 
-	@ToString.Exclude
+    @ToString.Exclude
     // Contrainte métier : si > unitesEnStock, il faut réapprovisionner ce produit
-	private int niveauDeReappro = 0;
+    private int niveauDeReappro = 0;
 
-	// 0 = FALSE
+    // 0 = FALSE
     // note : le getter généré par lombok s'appelle isIndisponible()
-	private boolean indisponible = false;
+    private boolean indisponible = false;
 
-	@ManyToOne(optional = false)
-	@NonNull
-	private Categorie categorie ;
+    @ManyToOne(optional = false)
+    @NonNull
+    private Categorie categorie ;
 
-	@ToString.Exclude
-	@OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
-	private List<Ligne> lignes = new LinkedList<>();
+    @ToString.Exclude
+    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
+    private List<Ligne> lignes = new LinkedList<>();
 
 
 }

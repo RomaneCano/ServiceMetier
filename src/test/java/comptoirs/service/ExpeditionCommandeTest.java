@@ -15,7 +15,7 @@ import comptoirs.dao.CommandeRepository;
 
 
 @SpringBootTest
- // Ce test est basé sur le jeu de données dans "test_data.sql"
+    // Ce test est basé sur le jeu de données dans "test_data.sql"
 class ExpeditionCommandeTest {
     static final int NUMERO_COMMANDE_DEJA_LIVREE = 99999;
     static final int NUMERO_COMMANDE_PAS_LIVREE  = 99998;
@@ -32,7 +32,7 @@ class ExpeditionCommandeTest {
     CommandeRepository daoCommande;
 
     @Test
-    // note : pas de @Transactional ici, car on veut récupérer l'exception générée par le service
+        // note : pas de @Transactional ici, car on veut récupérer l'exception générée par le service
     void laCommandeNeDoitPasEtreDejaEnvoyee() {
         assertThrows(IllegalStateException.class,
             () -> service.enregistreExpedition(NUMERO_COMMANDE_DEJA_LIVREE),
@@ -41,7 +41,7 @@ class ExpeditionCommandeTest {
 
     @Test
     @Transactional
-    //  note : @Transactional ici, car on veut tester les modifications faites par le service sur les entités
+        //  note : @Transactional ici, car on veut tester les modifications faites par le service sur les entités
     void lesQuantitesSontMisesAJour() {
         var commande = daoCommande.findById(NUMERO_COMMANDE_PAS_LIVREE).orElseThrow();
         assertNull(commande.getEnvoyeele(), "Cette commande n'a pas encore été envoyée");

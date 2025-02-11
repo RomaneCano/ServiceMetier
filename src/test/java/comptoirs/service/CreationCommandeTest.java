@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
- // Ce test est basé sur le jeu de données dans "test_data.sql"
+    // Ce test est basé sur le jeu de données dans "test_data.sql"
 class CreationCommandeTest {
     private static final String ID_PETIT_CLIENT = "0COM";
     private static final String ID_GROS_CLIENT = "2COM";
