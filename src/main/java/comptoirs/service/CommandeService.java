@@ -137,7 +137,6 @@ public class CommandeService {
 
         return ligne;
     }
-
     /**
      * Service métier : Enregistre l'expédition d'une commande connue par sa clé
      * Règles métier :
